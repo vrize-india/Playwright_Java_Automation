@@ -1,0 +1,8 @@
+com/tonic/tests/mobile/BaseTest.class
+com/tonic/tests/web/HomeTest.class
+com/tonic/tests/api/GET/APIDemo.class
+com/tonic/tests/api/POST/CreateUserPostCall.class
+com/tonic/tests/web/DemoTest.class
+com/tonic/tests/web/BaseTest.class
+com/tonic/tests/web/LoginTest.class
+com/tonic/tests/mobile/AccountTest.class

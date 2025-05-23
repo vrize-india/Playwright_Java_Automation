@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-05-23T19:25:51 AEST" name="Surefire suite" finished-at="2025-05-23T19:26:01 AEST" duration-ms="10253">
+    <groups>
+    </groups>
+    <test started-at="2025-05-23T19:25:51 AEST" name="Surefire test" finished-at="2025-05-23T19:26:01 AEST" duration-ms="10253">
+      <class name="com.tonic.tests.web.LoginTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.tonic.tests.web.LoginTest@63716833]" started-at="2025-05-23T19:25:51 AEST" name="setup" finished-at="2025-05-23T19:25:57 AEST" duration-ms="5828" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setupReport()[pri:0, instance:com.tonic.tests.web.LoginTest@63716833]" started-at="2025-05-23T19:25:57 AEST" name="setupReport" finished-at="2025-05-23T19:25:57 AEST" duration-ms="139" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupReport -->
+        <test-method is-config="true" signature="setupMethod()[pri:0, instance:com.tonic.tests.web.LoginTest@63716833]" started-at="2025-05-23T19:25:57 AEST" name="setupMethod" finished-at="2025-05-23T19:25:57 AEST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupMethod -->
+        <test-method signature="loginWithValidCredentials()[pri:1, instance:com.tonic.tests.web.LoginTest@63716833]" started-at="2025-05-23T19:25:57 AEST" name="loginWithValidCredentials" finished-at="2025-05-23T19:26:01 AEST" duration-ms="3973" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithValidCredentials -->
+        <test-method is-config="true" signature="tearDownMethod()[pri:0, instance:com.tonic.tests.web.LoginTest@63716833]" started-at="2025-05-23T19:26:01 AEST" name="tearDownMethod" finished-at="2025-05-23T19:26:01 AEST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownMethod -->
+        <test-method is-config="true" signature="tearDownReport()[pri:0, instance:com.tonic.tests.web.LoginTest@63716833]" started-at="2025-05-23T19:26:01 AEST" name="tearDownReport" finished-at="2025-05-23T19:26:01 AEST" duration-ms="173" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownReport -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.tonic.tests.web.LoginTest@63716833]" started-at="2025-05-23T19:26:01 AEST" name="tearDown" finished-at="2025-05-23T19:26:01 AEST" duration-ms="71" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.tonic.tests.web.LoginTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Mobile Test Suite">
+    <listeners>
+        <listener class-name="com.tonic.listeners.ExtentReportListener" />
+        <listener class-name="io.qameta.allure.testng.AllureTestNg" />
+        <listener class-name="com.tonic.listeners.AllureListener" />
+    </listeners>
+
+    <parameter name="device" value="android" />
+    
+    <test name="Android Mobile Tests">
+        <classes>
+            <class name="com.tonic.tests.mobile.AccountTest" />
+        </classes>
+    </test>
+</suite> 
