@@ -43,7 +43,6 @@ public class APIDemo {
         System.out.println("total response headers: " + headersMap.size());
         Assert.assertEquals(headersMap.get("server"), "cloudflare");
         Assert.assertEquals(headersMap.get("content-type"), "application/json; charset=utf-8");
-
         System.out.println("===============================");
 
         //using list:
