@@ -14,17 +14,118 @@
       <change afterPath="$PROJECT_DIR$/src/main/resources/data/ios.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/resources/data/user.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/qa/opencart/constants/AppConstants.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/qa/opencart/factory/PlaywrightFactory.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/qa/opencart/listeners/ExtentReportListener.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/qa/opencart/pages/HomePage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/qa/opencart/pages/LoginPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tonic/pages/AdminDashboardPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tonic/pages/BasePage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tonic/pages/ConfigurationPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tonic/pages/HomePage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tonic/pages/LoginPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tonic/pages/TerminalsPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tonic/utils/ApplicationUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tonic/utils/ApplicationUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tonic/utils/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tonic/utils/FileUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/opencart/base/BaseTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/opencart/tests/HomePageTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/opencart/tests/LoginPageTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/tonic/tests/web/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tonic/tests/web/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/tonic/tests/web/DemoTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/config/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/config/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/testrunners/testng_regressions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/1a176a4d-4784-497a-b218-fb014ef5ceb5-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/3c75d091-f783-4691-8505-eb89b973c073-attachment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/533c7e4e-d75b-49b4-b4a6-8de7c53c2c8f-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/56d2f506-7645-4d35-8d09-9dbf4381a425-attachment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/70f0409b-3c4f-4c3a-9413-7df4388ed410-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/8c1aaca7-c3ff-4757-a401-e2bf726e1151-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/90043739-bc22-420c-9703-4f107ed63ea7-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/a9226699-2636-4642-8195-17083c8185d5-attachment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/d3ff6826-72f4-424b-a33d-533395ed8af5-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/d5d15a92-48d9-4a9b-be49-dd4a7ee3978d-attachment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/annotations/TonicAnnotation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/api/data/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/api/data/Users.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/constants/AppConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/constants/FrameworkConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/constants/WebConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/driver/Driver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/driver/DriverManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/enums/CategoryType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/enums/ConfigProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/enums/LogType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/enums/WaitLogic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/exceptions/FrameworkException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/exceptions/PropertyFileHandleException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/factory/DriverFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/factory/ExplicitWaitFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/factory/PlaywrightFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/healthCheck/DemoTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/listeners/AllureListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/listeners/ExtentReportListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/listeners/Listener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/pages/AdminDashboardPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/pages/BasePage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/pages/ConfigurationPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/pages/HomePage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/pages/LoginPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/pages/TerminalsPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/utils/AllureScreenshotUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/utils/ApplicationUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/utils/ExtentManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/utils/ExtentReport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/utils/FileUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/utils/FrameworkLogger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/utils/PasswordManagerUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/utils/PropertyBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tonic/utils/ScreenshotUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/Surefire test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/Surefire test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.tonic.tests.web.LoginTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/bullet_point.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/collapseall.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.tonic.tests.web.LoginTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/failed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/jquery-3.6.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.tonic.tests.web.LoginTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/navigator-bullet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/Surefire test.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/classes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/groups.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods-alphabetical.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods-not-run.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/reporter-output.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/testng.xml.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/toc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/passed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/skipped.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-reports.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-reports.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-reports1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-reports2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/tonic/tests/api/GET/APIDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/tonic/tests/api/POST/CreateUserPostCall.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/tonic/tests/mobile/AccountTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/tonic/tests/mobile/BaseTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/tonic/tests/web/BaseTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/tonic/tests/web/HomeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/tonic/tests/web/LoginTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,21 +135,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "purwar389"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;purwar389&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "https://github.com/naveenanimation20/Playwright-Java-PageObjectModel.git",
+    "url": "https://gauravrize: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@github.com/vrize-india/Playwright_Java_Automation",
     "accountId": "fc485d04-b8b4-4c98-b149-e1a8cf3b597d"
   }
 }]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2xTuXT6x96J5oGpPbqdh7ImmrdF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -59,11 +160,12 @@
     "Maven.PlaywrightPOMSeries [clean,test...].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "TestNG.AccountTest.loginTest.executor": "Debug",
+    "TestNG.LoginTest.executor": "Run",
     "TestNG.TerminalManagementTest.executor": "Run",
     "TestNG.TerminalManagementTest.loginWithValidCredentials.executor": "Run",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/vrize/Documents/vrize2/Playwright-Java-PageObjectModel"
+    "last_opened_file_path": "/Users/vrize/Documents/vrize2/Tonic_Playwright_Java"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -78,7 +180,7 @@
       <recent name="com.tonic.constants" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TerminalManagementTest">
+  <component name="RunManager" selected="TestNG.LoginTest">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Playwright-Java-PageObjectModel" />
       <method v="2">
@@ -125,16 +227,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TerminalManagementTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="PlaywrightPOMSeries" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.tonic.tests.web.*" />
+          <option name="PATTERN" value="com.tonic.healthCheck.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.tonic.tests.web" />
-      <option name="MAIN_CLASS_NAME" value="com.tonic.tests.web.TerminalManagementTest" />
+      <option name="MAIN_CLASS_NAME" value="com.tonic.tests.web.LoginTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -142,16 +244,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TerminalManagementTest.loginWithValidCredentials" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginTest.loginWithValidCredentials" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="PlaywrightPOMSeries" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.tonic.tests.web.*" />
+          <option name="PATTERN" value="com.tonic.healthCheck.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.tonic.tests.web" />
-      <option name="MAIN_CLASS_NAME" value="com.tonic.tests.web.TerminalManagementTest" />
+      <option name="MAIN_CLASS_NAME" value="com.tonic.tests.web.LoginTest" />
       <option name="METHOD_NAME" value="loginWithValidCredentials" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -162,9 +264,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TerminalManagementTest" />
+        <item itemvalue="TestNG.LoginTest" />
         <item itemvalue="TestNG.AccountTest.loginTest" />
-        <item itemvalue="TestNG.TerminalManagementTest.loginWithValidCredentials" />
+        <item itemvalue="TestNG.LoginTest.loginWithValidCredentials" />
       </list>
     </recent_temporary>
   </component>

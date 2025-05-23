@@ -1,4 +1,4 @@
-package com.tonic.pages;
+package com.tonic.pages.web;
 
 
 import com.google.common.collect.ImmutableList;

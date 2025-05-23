@@ -21,8 +21,8 @@ public class LoginTest extends BaseTest {
         test = extent.createTest("Login With Valid Credentials", "Verify user can login with valid credentials");
         
         try {
-            Step1_EnterCredentials();
-            Step2_VerifyDashboard();
+            enterCredentials();
+            verifyDashboard();
             
             // Add screenshot to the report
             test.pass("Login successful", MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshot(), "Login success").build());
@@ -34,7 +34,7 @@ public class LoginTest extends BaseTest {
     }
     
     @Step("Enter login credentials and submit")
-    private void Step1_EnterCredentials() {
+    private void enterCredentials() {
         // Take screenshot before login
         AllureScreenshotUtil.takeScreenshot(page, "Before login");
         
@@ -46,7 +46,7 @@ public class LoginTest extends BaseTest {
     }
     
     @Step("Verify dashboard is loaded")
-    private void Step2_VerifyDashboard() {
+    private void verifyDashboard() {
         // Take screenshot of dashboard
         AllureScreenshotUtil.takeScreenshot(page, "Dashboard verification");
         

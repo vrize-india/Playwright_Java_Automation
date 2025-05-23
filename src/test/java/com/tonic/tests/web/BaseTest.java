@@ -15,16 +15,14 @@ import org.testng.annotations.Parameters;
 
 import com.microsoft.playwright.Page;
 import com.tonic.factory.PlaywrightFactory;
-import com.tonic.pages.HomePage;
-import com.tonic.pages.LoginPage;
-import com.tonic.pages.AdminDashboardPage;
-import com.tonic.pages.ConfigurationPage;
-import com.tonic.pages.TerminalsPage;
+import com.tonic.pages.web.HomePage;
+import com.tonic.pages.web.LoginPage;
+import com.tonic.pages.web.AdminDashboardPage;
+import com.tonic.pages.web.ConfigurationPage;
+import com.tonic.pages.web.TerminalsPage;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-
-import static com.tonic.factory.PlaywrightFactory.takeScreenshot;
 
 /**
  * Base Test class for all web tests

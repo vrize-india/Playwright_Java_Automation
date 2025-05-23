@@ -2,7 +2,12 @@ com/tonic/tests/mobile/BaseTest.class
 com/tonic/tests/web/HomeTest.class
 com/tonic/tests/api/GET/APIDemo.class
 com/tonic/tests/api/POST/CreateUserPostCall.class
-com/tonic/tests/web/DemoTest.class
+com/tonic/pages/web/HomePage.class
 com/tonic/tests/web/BaseTest.class
+com/tonic/pages/web/TerminalsPage.class
+com/tonic/pages/web/LoginPage.class
+com/tonic/pages/web/ConfigurationPage.class
+com/tonic/pages/web/AdminDashboardPage.class
+com/tonic/pages/web/BasePage.class
 com/tonic/tests/web/LoginTest.class
 com/tonic/tests/mobile/AccountTest.class

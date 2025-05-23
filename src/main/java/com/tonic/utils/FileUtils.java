@@ -1,12 +1,10 @@
 package com.tonic.utils;
 
-import com.tonic.pages.BasePage;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 
-public class FileUtils extends BasePage {
+public class FileUtils{
 
 	public String getFileType(File file) {
 		String fileExtension = null;

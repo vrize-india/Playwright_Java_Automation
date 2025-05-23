@@ -1,13 +1,12 @@
 package com.tonic.utils;
 
-import com.tonic.pages.BasePage;
 import com.tonic.enums.ConfigProperties;
 
 import java.util.Random;
 
 
 
-public class ApplicationUtils extends BasePage {
+public class ApplicationUtils {
 
 	public ApplicationUtils(){
 	}
