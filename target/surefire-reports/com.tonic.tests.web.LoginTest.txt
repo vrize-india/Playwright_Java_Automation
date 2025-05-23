@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.tonic.tests.web.LoginTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.66 s -- in com.tonic.tests.web.LoginTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.26 s -- in com.tonic.tests.web.LoginTest
