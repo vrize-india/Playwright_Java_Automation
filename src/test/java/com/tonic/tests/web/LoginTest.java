@@ -1,7 +1,11 @@
 package com.tonic.tests.web;
 
+import com.tonic.annotations.TonicAnnotation;
+import com.tonic.enums.CategoryType;
+import com.tonic.factory.PlaywrightFactory;
 import com.tonic.utils.AllureScreenshotUtil;
 import com.aventstack.extentreports.MediaEntityBuilder;
+//import com.tonic.utils.JiraPolicy;
 import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -12,105 +16,114 @@ import static com.tonic.factory.PlaywrightFactory.takeScreenshot;
 @Feature("Terminal Management Features")
 public class LoginTest extends BaseTest {
 
-    @Test(priority = 1)
+    @TonicAnnotation(category = {CategoryType.WEB})
+//    @JiraPolicy(logTicketReady=false)
+    @Test(priority = 1,description = "Verify user can login with valid credentials")
     @Story("User Authentication")
     @Description("Verify user can login with valid credentials")
     @Severity(SeverityLevel.BLOCKER)
     public void loginWithValidCredentials() {
-        // Create test entry in ExtentReports
-        test = extent.createTest("Login With Valid Credentials", "Verify user can login with valid credentials");
-        
+        test = com.tonic.utils.ExtentManager.getExtentTest();
         try {
-            enterCredentials();
-            verifyDashboard();
-            
+            Step1_EnterCredentials();
+            Step2_VerifyDashboard();
             // Add screenshot to the report
-            test.pass("Login successful", MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshot(), "Login success").build());
+            String screenshot = takeScreenshot();
+            if (screenshot != null && !screenshot.isEmpty()) {
+                test.pass("Login successful", MediaEntityBuilder.createScreenCaptureFromBase64String(screenshot, "Login success").build());
+            } else {
+                test.pass("Login successful (screenshot not available)");
+            }
         } catch (Exception e) {
-            test.fail("Login failed", MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshot(), "Login failure").build());
+            String screenshot = takeScreenshot();
+            if (screenshot != null && !screenshot.isEmpty()) {
+                test.fail("Login failed", MediaEntityBuilder.createScreenCaptureFromBase64String(screenshot, "Login failure").build());
+            } else {
+                test.fail("Login failed (screenshot not available)");
+            }
             test.fail(e);
             throw e;
         }
     }
-    
+
     @Step("Enter login credentials and submit")
-    private void enterCredentials() {
-        // Take screenshot before login
-        AllureScreenshotUtil.takeScreenshot(page, "Before login");
-        
-        // Perform login action
+    private void Step1_EnterCredentials() {
+        AllureScreenshotUtil.takeScreenshot(PlaywrightFactory.getPage(), "Before login");
         loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
-        
-        // Take screenshot after login
-        AllureScreenshotUtil.takeScreenshot(page, "After login submission");
-    }
-    
-    @Step("Verify dashboard is loaded")
-    private void verifyDashboard() {
-        // Take screenshot of dashboard
-        AllureScreenshotUtil.takeScreenshot(page, "Dashboard verification");
-        
-        // Verify dashboard is loaded
-        Assert.assertTrue(adminDashboardPage.isDashboardLoaded());
-        
-        // Take another screenshot after verification
-        AllureScreenshotUtil.takeScreenshot(page, "Final dashboard state");
+        AllureScreenshotUtil.takeScreenshot(PlaywrightFactory.getPage(), "After login submission");
     }
 
-    @Test(priority = 2)
+    @Step("Verify dashboard is loaded")
+    private void Step2_VerifyDashboard() {
+        AllureScreenshotUtil.takeScreenshot(PlaywrightFactory.getPage(), "Dashboard verification");
+        Assert.assertTrue(adminDashboardPage.isDashboardLoaded());
+        AllureScreenshotUtil.takeScreenshot(PlaywrightFactory.getPage(), "Final dashboard state");
+    }
+
+    @TonicAnnotation(category = {CategoryType.WEB})
+//    @JiraPolicy(logTicketReady=false)
+    @Test(priority = 2,description = "Verify user is able to navigate to terminal")
     @Story("Terminal Navigation")
     @Description("Verify user can navigate to terminals page")
     @Severity(SeverityLevel.NORMAL)
     public void navigateToTerminalsPage() {
-        // Create test entry in ExtentReports
-        test = extent.createTest("Navigate To Terminals Page", "Verify user can navigate to terminals page");
-        
+        test = com.tonic.utils.ExtentManager.getExtentTest();
         try {
-            // Take initial screenshot
-            AllureScreenshotUtil.takeScreenshot(page, "Before login for terminal navigation");
-            
-            // Login step
+            AllureScreenshotUtil.takeScreenshot(PlaywrightFactory.getPage(), "Before login for terminal navigation");
             loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
-            AllureScreenshotUtil.takeScreenshot(page, "After login for terminal navigation");
-            
-            // Navigate to configuration
+            AllureScreenshotUtil.takeScreenshot(PlaywrightFactory.getPage(), "After login for terminal navigation");
             adminDashboardPage.goToConfiguration();
-            AllureScreenshotUtil.takeScreenshot(page, "After navigation to configuration");
-            
-            // Verify configuration loaded
+            AllureScreenshotUtil.takeScreenshot(PlaywrightFactory.getPage(), "After navigation to configuration");
             Assert.assertTrue(configurationPage.isConfigurationLoaded());
-            
-            // Navigate to terminals
             configurationPage.goToTerminals();
-            AllureScreenshotUtil.takeScreenshot(page, "After navigation to terminals");
-            
-            // Verify terminals page loaded
+            AllureScreenshotUtil.takeScreenshot(PlaywrightFactory.getPage(), "After navigation to terminals");
             Assert.assertTrue(terminalsPage.isAddTerminalButtonPresent());
-            AllureScreenshotUtil.takeScreenshot(page, "Final terminals page state");
-            
-            // Add screenshot to the report
-            test.pass("Navigation successful", MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshot(), "Navigation success").build());
+            AllureScreenshotUtil.takeScreenshot(PlaywrightFactory.getPage(), "Final terminals page state");
+            String screenshot = takeScreenshot();
+            if (screenshot != null && !screenshot.isEmpty()) {
+                test.pass("Navigation successful", MediaEntityBuilder.createScreenCaptureFromBase64String(screenshot, "Navigation success").build());
+            } else {
+                test.pass("Navigation successful (screenshot not available)");
+            }
         } catch (Exception e) {
-            test.fail("Navigation failed", MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshot(), "Navigation failure").build());
+            String screenshot = takeScreenshot();
+            if (screenshot != null && !screenshot.isEmpty()) {
+                test.fail("Navigation failed", MediaEntityBuilder.createScreenCaptureFromBase64String(screenshot, "Navigation failure").build());
+            } else {
+                test.fail("Navigation failed (screenshot not available)");
+            }
             test.fail(e);
             throw e;
         }
     }
 
-    @Test(priority = 3)
+    @TonicAnnotation(category = {CategoryType.WEB})
+//    @JiraPolicy(logTicketReady=false)
+    @Test(priority = 3,description = "Verify user is able to add terminal")
     public void openAddTerminalDialog() {
-        test = extent.createTest("Open Add Terminal Dialog");
+        test = com.tonic.utils.ExtentManager.getExtentTest();
         try {
             loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
             adminDashboardPage.goToConfiguration();
             configurationPage.goToTerminals();
             terminalsPage.clickAddTerminalButton();
             Assert.assertTrue(terminalsPage.isAddTerminalDialogVisible());
-            test.pass("Add terminal dialog opened successfully", MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshot()).build());
+            String screenshot = takeScreenshot();
+            if (screenshot != null && !screenshot.isEmpty()) {
+                test.pass("Add terminal dialog opened successfully", MediaEntityBuilder.createScreenCaptureFromBase64String(screenshot).build());
+            } else {
+                test.pass("Add terminal dialog opened successfully (screenshot not available)");
+            }
         } catch (Exception e) {
-            test.fail("Failed to open add terminal dialog", MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshot()).build());
+            String screenshot = takeScreenshot();
+            if (screenshot != null && !screenshot.isEmpty()) {
+                test.fail("Failed to open add terminal dialog", MediaEntityBuilder.createScreenCaptureFromBase64String(screenshot).build());
+            } else {
+                test.fail("Failed to open add terminal dialog (screenshot not available)");
+            }
             test.fail(e);
             throw e;
         }
     }
-} 
+}
+
