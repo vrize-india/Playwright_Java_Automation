@@ -13,7 +13,7 @@ import java.util.Properties;
 
 /**
  * Builds and provides access to configuration properties from the framework config file.
- * Author: Gaurav Purwar
+ * @author Gaurav Purwar
  */
 public final class PropertyBuilder {
 

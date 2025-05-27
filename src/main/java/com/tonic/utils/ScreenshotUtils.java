@@ -22,7 +22,7 @@ import java.util.Base64;
 
 /**
  * Screenshot Utils web mobile desktop
- * Author: Gaurav Purwar
+ * @author Gaurav Purwar
  */
 public class ScreenshotUtils {
 

@@ -10,7 +10,7 @@ import java.util.Properties;
 
 /**
  * Utility class for securely reading and updating password-related properties.
- * Author: Gaurav Purwar
+ * @author Gaurav Purwar
  */
 public class PasswordManagerUtils {
     private static final String PROPERTIES_FILE = FrameworkConstants.getPropertyFilePath();

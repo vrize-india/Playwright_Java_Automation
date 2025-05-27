@@ -12,6 +12,10 @@ import java.util.EnumMap;
 import java.util.Map;
 import java.util.function.Consumer;
 
+/**
+ * Centralized logging utility integrating ExtentReports and console logging with optional screenshots. | Author: Gaurav
+ * @author Gaurav Purwar
+ */
 
 public class FrameworkLogger {
 
