@@ -1,11 +1,12 @@
 package com.tonic.utils;
 
 import com.tonic.enums.ConfigProperties;
-
 import java.util.Random;
 
-
-
+/**
+ * Application related common functions to be written here
+ * Author: Gaurav Purwar
+ */
 public class ApplicationUtils {
 
 	public ApplicationUtils(){

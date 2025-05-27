@@ -20,6 +20,10 @@ import java.io.OutputStream;
 import java.io.UncheckedIOException;
 import java.util.Base64;
 
+/**
+ * Screenshot Utils web mobile desktop
+ * Author: Gaurav Purwar
+ */
 public class ScreenshotUtils {
 
 	private ScreenshotUtils() {}

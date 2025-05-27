@@ -8,6 +8,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * Utility class for securely reading and updating password-related properties.
+ * Author: Gaurav Purwar
+ */
 public class PasswordManagerUtils {
     private static final String PROPERTIES_FILE = FrameworkConstants.getPropertyFilePath();
     private static final String PASSWORD_KEY = "password";
