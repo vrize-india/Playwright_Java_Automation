@@ -5,7 +5,7 @@ import com.tonic.enums.CategoryType;
 import com.tonic.factory.PlaywrightFactory;
 import com.tonic.utils.AllureScreenshotUtil;
 import com.aventstack.extentreports.MediaEntityBuilder;
-//import com.tonic.utils.JiraPolicy;
+import com.tonic.utils.JiraPolicy;
 import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -17,7 +17,7 @@ import static com.tonic.factory.PlaywrightFactory.takeScreenshot;
 public class LoginTest extends BaseTest {
 
     @TonicAnnotation(category = {CategoryType.WEB})
-//    @JiraPolicy(logTicketReady=false)
+    @JiraPolicy(logTicketReady=false)
     @Test(priority = 1,description = "Verify user can login with valid credentials")
     @Story("User Authentication")
     @Description("Verify user can login with valid credentials")
@@ -61,7 +61,7 @@ public class LoginTest extends BaseTest {
     }
 
     @TonicAnnotation(category = {CategoryType.WEB})
-//    @JiraPolicy(logTicketReady=false)
+    @JiraPolicy(logTicketReady=false)
     @Test(priority = 2,description = "Verify user is able to navigate to terminal")
     @Story("Terminal Navigation")
     @Description("Verify user can navigate to terminals page")
@@ -98,7 +98,7 @@ public class LoginTest extends BaseTest {
     }
 
     @TonicAnnotation(category = {CategoryType.WEB})
-//    @JiraPolicy(logTicketReady=false)
+    @JiraPolicy(logTicketReady=false)
     @Test(priority = 3,description = "Verify user is able to add terminal")
     public void openAddTerminalDialog() {
         test = com.tonic.utils.ExtentManager.getExtentTest();
