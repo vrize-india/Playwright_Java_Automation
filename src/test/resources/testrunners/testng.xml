@@ -43,6 +43,15 @@
 		</classes>
 	</test>
 
+	<test name="Android Mobile Tests">
+		<parameter name="device" value="android" />
+		<parameter name="platform" value="mobile" />
+		<parameter name="runmode" value="local" />
+		<classes>
+			<class name="com.tonic.tests.mobile.AccountTest" />
+		</classes>
+	</test>
+
 	<!-- <test name="Open Cart Login Page Test_edge1">
 		<parameter name="browser" value="edge" />
 		<classes>

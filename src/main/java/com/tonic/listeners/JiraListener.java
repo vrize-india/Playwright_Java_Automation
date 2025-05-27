@@ -37,7 +37,8 @@ public class JiraListener implements ITestListener {
             String issueDescription = result.getThrowable().getMessage() + "\n";
             issueDescription.concat(ExceptionUtils.getFullStackTrace(result.getThrowable()));
 
-//            jiraSp.createJiraTicket("Bug", issueSummary, issueDescription, "Naveen");
+            jiraSp.createJiraTicket("Bug", issueSummary, issueDescription, "Naveen");
+
         }
 
     }
