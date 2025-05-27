@@ -1,10 +1,35 @@
-.gitignore
-.allure
-.vscode
-!.gitignore
+# IntelliJ IDEA
 .idea/
-.class
-target/allure-results
-./screenshots
-./extent-test-output
-./target
+*.iml
+
+# VS Code
+.vscode/
+
+# Compiled class files
+*.class
+
+# Logs
+*.log
+
+# Build and output directories
+/build/
+/out/
+/target/
+
+# Allure Results
+target/allure-results/
+.allure/
+
+# Screenshots and reports
+/screenshots/
+/extent-test-output/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Swap files
+*.swp
+
+# Git should track this file
+!.gitignore
