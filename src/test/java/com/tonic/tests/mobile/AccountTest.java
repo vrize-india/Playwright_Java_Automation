@@ -1,5 +1,8 @@
 package com.tonic.tests.mobile;
 
+import com.tonic.annotations.TonicAnnotation;
+import com.tonic.enums.CategoryType;
+import com.tonic.utils.JiraPolicy;
 import org.testng.annotations.Test;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
@@ -15,6 +18,8 @@ import com.tonic.driver.DriverManager;
 @Feature("Android Account Features")
 public class AccountTest extends BaseTest {
 
+    @TonicAnnotation(category = {CategoryType.ANDROID_MOBILE})
+    @JiraPolicy(logTicketReady=false)
     @Test
     @Story("Mobile Demo")
     @Description("Basic mobile app test demonstration")

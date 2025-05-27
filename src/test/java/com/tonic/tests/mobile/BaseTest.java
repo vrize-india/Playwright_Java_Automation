@@ -1,11 +1,15 @@
 package com.tonic.tests.mobile;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.Duration;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Properties;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -13,13 +17,14 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Parameters;
+import com.tonic.constants.FrameworkConstants;
+import com.tonic.enums.ConfigProperties;
+import com.tonic.utils.PropertyBuilder;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.testng.annotations.*;
 
 import com.microsoft.playwright.Page;
 import com.tonic.factory.PlaywrightFactory;
@@ -34,14 +39,32 @@ import org.openqa.selenium.TakesScreenshot;
  * Contains common setup and teardown methods
  */
 public class BaseTest {
+    public HashMap<String, HashMap<String, String>> testClassData = null;
+    public HashMap<String, String> tcData = null;
+    public HashMap<String, String> configurationData = null;
+    AppiumDriverLocalService androidService = null;
+    AppiumDriverLocalService iosService = null;
 
-    protected PlaywrightFactory pf;
-    protected Page page;
-    protected Properties prop;
     protected ExtentTest test;
     protected static ExtentReports extent;
-    protected String device = "android"; // Default device
-    
+    protected String device;
+    public String platform;
+    public String runmode;
+
+    @BeforeSuite
+    @Parameters({"device"})
+    public void suiteSetUp(@Optional("android") String device) {
+        this.device=device;
+        if (device.equalsIgnoreCase("android")){
+            AppiumServiceBuilder builder = new AppiumServiceBuilder().withAppiumJS(new File(FrameworkConstants.getAppiumPath())).withIPAddress(FrameworkConstants.getIpAddress()).usingPort(FrameworkConstants.getAndroidPort()).withTimeout(Duration.ofSeconds(Integer.parseInt(PropertyBuilder.getPropValue(ConfigProperties.TIMEOUT))));
+            androidService = AppiumDriverLocalService.buildService(builder);
+            androidService.start();}
+
+        if (device.equalsIgnoreCase("ios")){
+            AppiumServiceBuilder builderIOS = new AppiumServiceBuilder().withAppiumJS(new File(FrameworkConstants.getAppiumPath())).withIPAddress(FrameworkConstants.getIpAddress()).usingPort(FrameworkConstants.getIosPort()).withTimeout(Duration.ofSeconds(Integer.parseInt(PropertyBuilder.getPropValue(ConfigProperties.TIMEOUT))));
+            iosService = AppiumDriverLocalService.buildService(builderIOS);
+            iosService.start();}
+    }
     @BeforeSuite
     public void setupReport() {
         // Setup ExtentReports
@@ -66,57 +89,73 @@ public class BaseTest {
         
         System.out.println("Mobile ExtentReports initialized. Report will be saved to: " + reportFile);
     }
-    
+
+    @BeforeClass
+    @Parameters({"platform"})
+    public void setUpPlatform(@Optional("mobile") String platform) {
+        this.platform = platform;
+        // You can add logic here to initialize things based on the platform
+        System.out.println("Running tests on platform: " + platform);
+    }
+    @BeforeClass
+    @Parameters({"platform"})
+    public void setUpRunmode(@Optional("local") String runmode) {
+        this.runmode = runmode;
+        System.out.println("Running tests on platform: " + runmode);
+    }
     @BeforeClass
     @Parameters({"device"})
-    public void setUpAppium(String device) {
-        if (device != null) {
-            this.device = device;
-        }
-        System.out.println("Setting up test on device: " + this.device);
-        
-        try {
-            // Initialize Appium driver
-            Driver.initDriver(this.device, "local", "Mobile App Test");
-            System.out.println("Appium driver initialized successfully");
-            
-            // Allow time for app to load
-            Thread.sleep(2000);
-        } catch (Exception e) {
-            System.err.println("Failed to initialize Appium driver: " + e.getMessage());
-            e.printStackTrace();
+    public void set(@Optional("device") String platform){
+        //this.platform=platform;
+        configurationSetup();
+    }
+    public void configurationSetup() {
+        {
+            try {
+                String inputJsonFilePath = FrameworkConstants.getInputJsonPath();
+                Object obj = new JSONParser().parse(new FileReader(inputJsonFilePath + "configuration.json"));
+                JSONObject jo = (JSONObject) obj;
+                configurationData = (HashMap<String, String>) jo.get("configuration");
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
     
-    @BeforeMethod
-    public void setup() {
-        // Initialize Playwright for web view testing if needed
-        pf = new PlaywrightFactory();
-        prop = pf.init_prop();
-        page = pf.initBrowser(prop);
-        System.out.println("Mobile browser session started");
+   @BeforeMethod
+    public void setUp(Method method) throws Exception {
+        if (device.equalsIgnoreCase("android")){
+            Driver.initDriver("android", runmode, method.getName());
+
+        }
+        else if (device.equalsIgnoreCase("ios")){
+            Driver.initDriver("ios", runmode, method.getName());
+
+        }
+        configurationSetup();
+        dataSetup(method);
     }
-    
     @AfterMethod
     public void tearDown() {
-        if (page != null) {
-            page.context().browser().close();
-            System.out.println("Mobile browser closed");
-        }
+       try{ Driver.quitDriver();
+        System.out.println("Appium driver closed");
+    } catch (Exception e) {
+        System.err.println("Error closing Appium driver: " + e.getMessage());
     }
-    
-    @AfterClass
-    public void tearDownAppium() {
-        try {
-            // Clean up Appium driver
-            Driver.quitDriver();
-            System.out.println("Appium driver closed");
-        } catch (Exception e) {
-            System.err.println("Error closing Appium driver: " + e.getMessage());
-        }
         System.out.println("Test cleanup complete");
     }
-    
+
+    @AfterSuite
+    @Parameters({"device"})
+    public void suiteTearDown() {
+        if(device.equalsIgnoreCase("android")){
+            androidService.stop();
+        }
+        else if(device.equalsIgnoreCase("ios")){
+            iosService.stop();
+        }
+    }
+
     @AfterSuite
     public void tearDownReport() {
         if (extent != null) {
@@ -124,28 +163,26 @@ public class BaseTest {
             System.out.println("Mobile ExtentReports saved successfully!");
         }
     }
-    
-    /**
-     * Take screenshot with Playwright
-     */
-    protected String takeScreenshot() {
-        String path = System.getProperty("user.dir") + "/screenshots/mobile_" + System.currentTimeMillis() + ".png";
-        
-        // Create the directory if it doesn't exist
-        Path screenshotDir = Paths.get(System.getProperty("user.dir") + "/screenshots/");
-        try {
-            if (!Files.exists(screenshotDir)) {
-                Files.createDirectories(screenshotDir);
+
+    public void dataSetup(Method method) {
+        {
+            String tcMethodName = method.getName();
+            String tcClassName = this.getClass().getSimpleName();
+            String tcPackageFullName = this.getClass().getPackageName();
+            String tcPakageName = tcPackageFullName.substring(tcPackageFullName.lastIndexOf(".") + 1);
+
+            Object obj = null;
+            try {
+                String inputJsonFilePath;
+                inputJsonFilePath = FrameworkConstants.getInputJsonPath();
+                obj = new JSONParser().parse(new FileReader(inputJsonFilePath + tcPakageName + ".json"));
+                JSONObject jo = (JSONObject) obj;
+                testClassData = (HashMap<String, HashMap<String, String>>) jo.get(tcClassName);
+                tcData = (HashMap<String, String>) testClassData.get(tcMethodName);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-        
-        byte[] buffer = page.screenshot(new Page.ScreenshotOptions()
-                .setPath(Paths.get(path))
-                .setFullPage(true));
-        
-        return java.util.Base64.getEncoder().encodeToString(buffer);
     }
     
     /**
