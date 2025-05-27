@@ -7,3 +7,4 @@
 target/allure-results
 ./screenshots
 ./extent-test-output
+./target
