@@ -4,9 +4,9 @@ This project is a Test Automation Framework built with Playwright Java and follo
 
 
 ## Author 
-Gaurav Purwar
-v0.1
-Date: 23 May 2025
+- Gaurav Purwar
+- v0.1
+- Date: 23 May 2025
 
 ## Prerequisites
 
@@ -38,7 +38,7 @@ mvn clean test
 ### Run a specific test class
 
 ```bash
-mvn clean test -Dtest=com.qa.tonic.tests.TerminalManagementTest
+ mvn clean test -Dtest=com.tonic.tests.mobile.AccountTest -Dplatform=mobile -Ddevice=android -Drunmode=local
 ```
 
 ### Run a specific test method
