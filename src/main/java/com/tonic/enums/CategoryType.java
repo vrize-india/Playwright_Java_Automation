@@ -1,6 +1,8 @@
 package com.tonic.enums;
 
 public enum CategoryType {
-    IOS,
-    ANDROID
+    WEB,
+    API,
+    IOS_MOBILE,
+    ANDROID_MOBILE
 }

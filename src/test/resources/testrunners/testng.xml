@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Tonic Test Suite" verbose="4">
+<suite name="Tonic Test Suite"  parallel="tests" thread-count="2" verbose="4">
 
 	<listeners>
 		<listener
-			class-name="com.tonic.listeners.ExtentReportListener" />
+				class-name="com.tonic.listeners.ExtentReportListener" />
 		<listener
-			class-name="io.qameta.allure.testng.AllureTestNg" />
+				class-name="io.qameta.allure.testng.AllureTestNg" />
 		<listener
-			class-name="com.tonic.listeners.AllureListener" />
+				class-name="com.tonic.listeners.AllureListener" />
 	</listeners>
 
 	<!-- <test name="Open Cart Home Page Test_chrome">
@@ -21,17 +21,27 @@
 
 	<test name="Terminal Management Tests">
 		<parameter name="browser" value="chrome" />
+		<parameter name="platform" value="web" />
 		<classes>
-			<class name="com.tonic.tests.web.LoginTest" />
+			<class name="com.tonic.tests.web.LoginTest">
+				<methods>
+					<include name="loginWithValidCredentials"/>
+				</methods>
+			</class>
 		</classes>
 	</test>
 
-	<!-- <test name="Open Cart Home Page Test_chromium">
-		<parameter name="browser" value="chromium" />
+	<test name="Open Cart Home Page Test_chromium">
+		<parameter name="browser" value="chrome" />
+		<parameter name="platform" value="web" />
 		<classes>
-			<class name="com.tonic.tests.LoginPageTest" />
+			<class name="com.tonic.tests.web.LoginTest" >
+				<methods>
+					<include name="navigateToTerminalsPage"/>
+				</methods>
+			</class>
 		</classes>
-	</test> -->
+	</test>
 
 	<!-- <test name="Open Cart Login Page Test_edge1">
 		<parameter name="browser" value="edge" />
