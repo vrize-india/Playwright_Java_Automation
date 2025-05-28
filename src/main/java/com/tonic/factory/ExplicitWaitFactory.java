@@ -9,6 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+/**
+ * Handles waits
+ * @author : Gaurav Purwar
+ */
 public final class ExplicitWaitFactory {
 
     private ExplicitWaitFactory() {}

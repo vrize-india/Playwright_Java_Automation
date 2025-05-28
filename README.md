@@ -1,6 +1,6 @@
 # Playwright Java Page Object Model Framework
 
-This project is a Test Automation Framework built with Playwright Java and follows the Page Object Model design pattern.
+This project is a Test Automation Framework built with Playwright Java with TestNG and follows the Page Object Model design pattern.
 
 
 ## Author 
@@ -8,11 +8,24 @@ This project is a Test Automation Framework built with Playwright Java and follo
 - v0.1
 - Date: 23 May 2025
 
-## Prerequisites
+## Capabilities
+- Web Automation
+- API Automation
+- Mobile Automation (appium)
+- Executable from Command line to implement CI/CD
+- Allure (for reporting)
+- TestNG
+- Extent Report
+- JIRA Integration
+- Parallel Execution
+- Multiple Browser
 
+## Prerequisites
 - Java JDK 8 or higher
 - Maven
 - Allure (for reporting)
+- TestNG
+- Extent Report
 
 ## Setup
 
@@ -29,38 +42,27 @@ This project is a Test Automation Framework built with Playwright Java and follo
 
 ## Running Tests
 
-### Run all tests
+### Run Mobile tests
 
-```bash
-mvn clean test
-```
-
-### Run a specific test class
 
 ```bash
 mvn clean test -Dtest=com.tonic.tests.mobile.AccountTest -Dplatform=mobile -Ddevice=android -Drunmode=local
+```
+
+### Run a specific test class with test methods
+
+```bash
 mvn clean test -Dtest=com.qa.tonic.tests.web.LoginTest
+```
+
+## Run a specified tests in testng.xml
+```bash
 mvn clean test -DsuiteXmlFile=src/test/resources/testng.xml
-```
-
-### Run a specific test method
-
-```bash
-mvn clean test com.qa.tonic.tests.TerminalManagementTest#loginWithValidCredentials
-```
-
-## Run a specific test method with report
-```bash
-mvn clean test -Dtest=com.tonic.tests.web.LoginTest#loginWithValidCredentials
-allure serve target/allure-results
-
-
-
 ```
 
 ### Run tests with a specific browser
 
-The browser can be specified in the TestNG XML file. Edit the `src/test/resources/testrunners/testng_regressions.xml` file:
+The browser can be specified in the TestNG XML file. Edit the `src/test/resources/testrunners/testng.xml` file:
 
 ```xml
 <parameter name="browser" value="chromium" />  <!-- Options: chromium, firefox, webkit -->
@@ -83,14 +85,32 @@ allure serve target/allure-results
 
 ```
 ├── src
-│   ├── main/java/com/qa/tonic
-│   │   ├── factory      # Browser factory and utilities
-│   │   ├── pages        # Page objects
-│   │   └── utils        # Utility classes
-│   └── test/java/com/qa/tonic
-│       ├── base         # Test base classes
-│       ├── tests        # Test classes
-│       └── listeners    # TestNG listeners
+│   ├── main
+│   │   └── java/com/tonic
+│   │       ├── api           # API utilities and data
+│   │       ├── annotations   # Custom annotations
+│   │       ├── constants     # Framework constants
+│   │       ├── driver        # Driver management (Driver, DriverManager)
+│   │       ├── enums         # Enum types
+│   │       ├── exceptions    # Custom exceptions
+│   │       ├── factory       # Browser factory and related utilities
+│   │       ├── healthCheck   # Health check utilities
+│   │       ├── listeners     # TestNG listeners
+│   │       └── utils         # Utility classes (logging, reporting, etc.)
+│   └── test
+│       └── java/com/tonic
+│           ├── actions       # User actions/flows
+│           ├── pages
+│           │   ├── web       # Web page objects (POM)
+│           │   └── app       # Mobile app page objects (if any)
+│           └── tests
+│               ├── web       # Web test classes
+│               ├── mobile    # Mobile test classes
+│               └── api
+│                   ├── GET   # API GET tests
+│                   ├── POST  # API POST tests
+│                   ├── PUT   # API PUT tests
+│                   └── DELETE# API DELETE tests
 ├── src/test/resources
 │   ├── config           # Configuration properties
 │   └── testrunners      # TestNG XML files
@@ -115,7 +135,7 @@ To debug a test:
 This framework can be integrated with CI/CD tools like Jenkins, GitHub Actions, etc. 
 
 ## Tips
-https://docs.cursor.com/welcome
-https://docs.cursor.com/cmdk/overview
-https://docs.cursor.com/chat/overview
+- https://docs.cursor.com/welcome
+- https://docs.cursor.com/cmdk/overview
+- https://docs.cursor.com/chat/overview
 

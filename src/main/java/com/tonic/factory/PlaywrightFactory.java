@@ -16,6 +16,10 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.Tracing;
 
+/**
+ * Manages Playwright browser lifecycle, context, page objects, and tracing for test execution.
+ * @author : Gaurav Purwar
+ */
 public class PlaywrightFactory {
 
 	private Properties prop;

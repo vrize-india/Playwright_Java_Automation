@@ -12,7 +12,10 @@ import org.openqa.selenium.MutableCapabilities;
 
 import java.net.URI;
 
-
+/**
+ * Handles dynamic Appium driver instantiation for Android/iOS in local or remote (i.e. Sauce Labs) environments.
+ * @author : Gaurav Purwar
+ */
 public class DriverFactory {
 
     public static AppiumDriver getDriver(String device, String runMode, String testName) throws Exception {
