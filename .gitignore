@@ -19,6 +19,7 @@
 # Allure Results
 target/allure-results/
 .allure/
+extent-test-output/
 
 # Screenshots and reports
 /screenshots/

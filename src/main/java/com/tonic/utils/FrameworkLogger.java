@@ -4,7 +4,7 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
-import com.tonic.driver.DriverManager;
+import com.tonic.driver.Driver;
 import com.tonic.enums.ConfigProperties;
 import com.tonic.enums.LogType;
 
@@ -29,7 +29,7 @@ public class FrameworkLogger {
 	private static final Consumer<String> EXTENTANDCONSOLE = PASS.andThen(CONSOLE);
 	private static final Consumer<String> TAKESCREENSHOT = (message)-> {
 		try {
-			if (DriverManager.getDriver() != null) {
+			if (Driver.getDriver() != null) {
 				String base64Screenshot = ScreenshotUtils.screenshotCapture();
 				String htmlImage = "<img src='data:image/png;base64," + base64Screenshot + "' style='width:25%;height:auto;'/>";
 				Markup markup = MarkupHelper.createLabel(htmlImage, ExtentColor.TRANSPARENT);

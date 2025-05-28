@@ -1,6 +1,6 @@
 package com.tonic.utils;
 
-import com.tonic.driver.DriverManager;
+import com.tonic.driver.Driver;
 import com.tonic.enums.ConfigProperties;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -30,7 +30,7 @@ public class ScreenshotUtils {
 
 	public static String screenshotCapture() {
 		WebDriver webdriver = null;
-		webdriver = DriverManager.getDriver();
+		webdriver = Driver.getDriver();
 		webdriver = new Augmenter().augment(webdriver);
 		try {
 			if (PropertyBuilder.getPropValue(ConfigProperties.SNAPSHOT).equalsIgnoreCase("normal")) {

@@ -29,7 +29,6 @@ import org.testng.annotations.*;
 import com.microsoft.playwright.Page;
 import com.tonic.factory.PlaywrightFactory;
 import com.tonic.driver.Driver;
-import com.tonic.driver.DriverManager;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -190,7 +189,7 @@ public class BaseTest {
      */
     protected String takeAppiumScreenshot() {
         try {
-            return ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.BASE64);
+            return ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BASE64);
         } catch (Exception e) {
             System.err.println("Failed to take Appium screenshot: " + e.getMessage());
             return null;

@@ -12,7 +12,7 @@ import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 
 import org.openqa.selenium.By;
-import com.tonic.driver.DriverManager;
+import com.tonic.driver.Driver;
 
 @Epic("Mobile Android Tests")
 @Feature("Android Account Features")
@@ -38,8 +38,8 @@ public class AccountTest extends BaseTest {
             
             // Simple app interaction example
             try {
-                if (DriverManager.getDriver().findElements(By.xpath("//*[@text='ALLOW']")).size() > 0) {
-                    DriverManager.getDriver().findElement(By.xpath("//*[@text='ALLOW']")).click();
+                if (Driver.getDriver().findElements(By.xpath("//*[@text='ALLOW']")).size() > 0) {
+                    Driver.getDriver().findElement(By.xpath("//*[@text='ALLOW']")).click();
                     System.out.println("Clicked ALLOW button");
                 }
             } catch (Exception e) {

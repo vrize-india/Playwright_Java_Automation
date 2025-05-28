@@ -52,10 +52,10 @@ mvn clean test -Dtest=com.tonic.tests.mobile.AccountTest -Dplatform=mobile -Ddev
 ### Run a specific test class with test methods
 
 ```bash
-mvn clean test -Dtest=com.qa.tonic.tests.web.LoginTest
+mvn clean test -Dtest=com.tonic.tests.web.LoginTest
 ```
 
-## Run a specified tests in testng.xml
+## Run a specified tests in testng.xml to execute tests in parallel
 ```bash
 mvn clean test -DsuiteXmlFile=src/test/resources/testng.xml
 ```

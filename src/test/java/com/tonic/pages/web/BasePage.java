@@ -3,7 +3,7 @@ package com.tonic.pages.web;
 
 import com.google.common.collect.ImmutableList;
 import com.tonic.constants.FrameworkConstants;
-import com.tonic.driver.DriverManager;
+import com.tonic.driver.Driver;
 import com.tonic.enums.LogType;
 import com.tonic.enums.WaitLogic;
 
@@ -59,7 +59,7 @@ public class BasePage {
     }
 
     public void sendKeys(By by, CharSequence value, WaitLogic waitStrategy, String elementName) {
-        if (DriverManager.getDriver().getClass().equals(IOSDriver.class)) {
+        if (Driver.getDriver().getClass().equals(IOSDriver.class)) {
             scrollTo(by, elementName);
         }
 
@@ -70,7 +70,7 @@ public class BasePage {
 
     public static boolean isVisible(By by, String elementName) {
         try {
-            WebElement element = DriverManager.getDriver().findElement(by);
+            WebElement element = Driver.getDriver().findElement(by);
             if (element.isDisplayed()) {
                 System.out.println(elementName + " is visible");
                 return true;
@@ -99,7 +99,7 @@ public class BasePage {
 
     public static void scrollTo(By by, String elementName, String scrollDirection) {
         while (!isVisible(by, elementName)) {
-            Dimension size = DriverManager.getDriver().manage().window().getSize();
+            Dimension size = Driver.getDriver().manage().window().getSize();
             Point midPoint = new Point((int) (size.width * 0.5), (int) (size.height * 0.5));
             //midpoint is basically storing the X and Y Co-ordinates of the screen
             int bottom = midPoint.y + (int) (midPoint.y * 0.2);
@@ -126,7 +126,7 @@ public class BasePage {
             swipe.addAction(input.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
             swipe.addAction(input.createPointerMove(Duration.ofMillis(500), PointerInput.Origin.viewport(), end.x, end.y));
             swipe.addAction(input.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
-            DriverManager.getDriver().perform(ImmutableList.of(swipe));
+            Driver.getDriver().perform(ImmutableList.of(swipe));
 
             WaitForMiliSec(100);
         }
@@ -160,7 +160,7 @@ public class BasePage {
         for(int i = 1; i <= FrameworkConstants.getExplicitWait(); i++)
         {
             try {
-                if(DriverManager.getDriver().findElement(locator).isDisplayed() || DriverManager.getDriver().findElement(locator).isDisplayed())
+                if(Driver.getDriver().findElement(locator).isDisplayed() || Driver.getDriver().findElement(locator).isDisplayed())
                 {
                     flag = true;
                     break;
@@ -179,7 +179,7 @@ public class BasePage {
         for(int i = 1; i <= waitTime; i++)
         {
             try {
-                if(DriverManager.getDriver().findElement(locator).isDisplayed() || DriverManager.getDriver().findElement(locator).isDisplayed())
+                if(Driver.getDriver().findElement(locator).isDisplayed() || Driver.getDriver().findElement(locator).isDisplayed())
                 {
                     flag = true;
                     break;
@@ -194,14 +194,14 @@ public class BasePage {
     }
 
     public void clearField(By by, WaitLogic waitStrategy, String elementName) {
-        Assert.assertTrue(waitUntilElementIsVisible(DriverManager.getDriver(), by), elementName + " is not visible");
+        Assert.assertTrue(waitUntilElementIsVisible(Driver.getDriver(), by), elementName + " is not visible");
         WebElement element = waitExplicitlyForElement(waitStrategy, by);
         element.clear();
         log(LogType.EXTENTANDCONSOLE, elementName + " textField is cleared successfully");
     }
 
     public boolean isEnabled(By by, String elementName) {
-        Assert.assertTrue(waitUntilElementIsVisible(DriverManager.getDriver(), by), elementName + " is not visible");
+        Assert.assertTrue(waitUntilElementIsVisible(Driver.getDriver(), by), elementName + " is not visible");
         boolean result = true;
         try {
             WebElement element = ExplicitWaitFactory.waitExplicitlyForElement(WaitLogic.VISIBLE, by);
@@ -220,7 +220,7 @@ public class BasePage {
     }
 
     public String getLocator(String name) {
-        if (DriverManager.getDriver().getClass().equals(AndroidDriver.class)) {
+        if (Driver.getDriver().getClass().equals(AndroidDriver.class)) {
             return androidXpath.get(name);
         }
 
@@ -228,7 +228,7 @@ public class BasePage {
     }
 
     public static void swipeTo(){
-        Dimension size = DriverManager.getDriver().manage().window().getSize();
+        Dimension size = Driver.getDriver().manage().window().getSize();
         int startX = size.getWidth() / 2;
         int startY = size.getHeight() / 2;
         int endX = (int)(size.getWidth() * 0.25);
@@ -240,7 +240,7 @@ public class BasePage {
                 .addAction (new Pause(finger1, Duration.ofMillis(200)))
                 .addAction(finger1.createPointerMove (Duration.ofMillis(100), PointerInput. Origin.viewport(), endX, endY))
                 .addAction (finger1.createPointerUp (PointerInput.MouseButton.LEFT.asArg()));
-        DriverManager.getDriver().perform(Collections.singletonList(sequence));
+        Driver.getDriver().perform(Collections.singletonList(sequence));
     }
 }
 
