@@ -38,7 +38,9 @@ mvn clean test
 ### Run a specific test class
 
 ```bash
- mvn clean test -Dtest=com.tonic.tests.mobile.AccountTest -Dplatform=mobile -Ddevice=android -Drunmode=local
+mvn clean test -Dtest=com.tonic.tests.mobile.AccountTest -Dplatform=mobile -Ddevice=android -Drunmode=local
+mvn clean test -Dtest=com.qa.tonic.tests.web.LoginTest
+mvn clean test -DsuiteXmlFile=src/test/resources/testng.xml
 ```
 
 ### Run a specific test method
@@ -51,6 +53,9 @@ mvn clean test com.qa.tonic.tests.TerminalManagementTest#loginWithValidCredentia
 ```bash
 mvn clean test -Dtest=com.tonic.tests.web.LoginTest#loginWithValidCredentials
 allure serve target/allure-results
+
+
+
 ```
 
 ### Run tests with a specific browser
