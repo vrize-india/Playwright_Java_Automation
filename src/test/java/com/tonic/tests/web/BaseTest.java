@@ -4,6 +4,8 @@ import java.util.Properties;
 import java.util.Date;
 import java.io.File;
 
+import com.tonic.listeners.AllureListener;
+import com.tonic.listeners.JiraListener;
 import com.tonic.listeners.Listener;
 import org.testng.annotations.*;
 
@@ -22,7 +24,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
  * Base Test class for all web tests
  * Provides common setup and teardown functionality
  */
-@Listeners(Listener.class)
+@Listeners({Listener.class,JiraListener.class, AllureListener.class})
 public class BaseTest {
 
     protected PlaywrightFactory pf;

@@ -19,7 +19,7 @@ import com.tonic.driver.DriverManager;
 public class AccountTest extends BaseTest {
 
     @TonicAnnotation(category = {CategoryType.ANDROID_MOBILE})
-    @JiraPolicy(logTicketReady=false)
+    @JiraPolicy(logTicketReady=true)
     @Test
     @Story("Mobile Demo")
     @Description("Basic mobile app test demonstration")
