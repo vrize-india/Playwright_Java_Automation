@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Serenity BDD Composite Suite" verbose="1" parallel="false">
+    <test name="All Features BDD Test">
+        <classes>
+            <class name="com.tonic.runners.AllFeaturesTestRunner"/>
+        </classes>
+    </test>
+</suite> 

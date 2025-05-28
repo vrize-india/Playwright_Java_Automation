@@ -131,5 +131,9 @@ public class PlaywrightFactory {
 		}
 		return prop;
 	}
+
+	public static void setPage(Page page) {
+		tlPage.set(page);
+	}
 }
 

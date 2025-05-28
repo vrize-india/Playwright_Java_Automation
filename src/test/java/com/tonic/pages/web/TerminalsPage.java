@@ -10,6 +10,7 @@ public class TerminalsPage {
     private String networkNameField = "input[placeholder='Network Name']";
     private String doneButton = "role=button[name='Done']";
     private String requiredError = "text=Required";
+    private String addTerminalText = "#mat-dialog-0 > app-terminal > mat-card > mat-card-title > h1";
 
     public TerminalsPage(Page page) {
         this.page = page;
@@ -27,6 +28,10 @@ public class TerminalsPage {
         return page.locator(addTerminalDialog).isVisible();
     }
 
+    public boolean isAddTerminalTextVisible() {
+        return page.locator(addTerminalText).isVisible();
+    }
+
     public void fillTerminalDetails(String terminalName, String networkName) {
         page.locator(terminalNameField).fill(terminalName);
         page.locator(networkNameField).fill(networkName);
@@ -38,5 +43,9 @@ public class TerminalsPage {
 
     public boolean isRequiredErrorVisible() {
         return page.locator(requiredError).isVisible();
+    }
+
+    public boolean isTerminalsPageVisible() {
+        return page.isVisible(terminalNameField);
     }
 } 

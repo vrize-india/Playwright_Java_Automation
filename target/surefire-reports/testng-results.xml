@@ -1,48 +1,366 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="4" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-05-23T23:14:29 AEST" name="Surefire suite" finished-at="2025-05-23T23:14:40 AEST" duration-ms="10852">
+  <suite started-at="2025-05-28T04:25:03 GMT-04:00" name="Serenity BDD Composite Suite" finished-at="2025-05-28T04:26:01 GMT-04:00" duration-ms="58214">
     <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.tonic.runners.AllFeaturesTestRunner@58a63629]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-05-23T23:14:29 AEST" name="Surefire test" finished-at="2025-05-23T23:14:40 AEST" duration-ms="10852">
-      <class name="com.tonic.tests.web.LoginTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.tonic.tests.web.LoginTest@573284a5]" started-at="2025-05-23T23:14:29 AEST" name="setup" finished-at="2025-05-23T23:14:35 AEST" duration-ms="5987" status="PASS">
+    <test started-at="2025-05-28T04:25:03 GMT-04:00" name="All Features BDD Test" finished-at="2025-05-28T04:26:01 GMT-04:00" duration-ms="58214">
+      <class name="com.tonic.runners.AllFeaturesTestRunner">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:com.tonic.runners.AllFeaturesTestRunner@58a63629]" started-at="2025-05-28T04:25:03 GMT-04:00" name="setUpClass" finished-at="2025-05-28T04:25:03 GMT-04:00" duration-ms="276" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.tonic.runners.AllFeaturesTestRunner@58a63629]" started-at="2025-05-28T04:25:03 GMT-04:00" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-05-28T04:25:29 GMT-04:00" duration-ms="25502" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA["Open add terminal dialog"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Add Terminal]"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.microsoft.playwright.TimeoutError">
+            <message>
+              <![CDATA[Error {
+  message='Timeout 5000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 5000ms exceeded.
+    at ProgressController.run (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/progress.js:78:26)
+    at Frame.waitForSelector (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/frames.js:619:23)
+    at FrameDispatcher.waitForSelector (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/dispatchers/frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/dispatchers/dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("role=dialog").locator("text=Add Terminal") to be visible
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 5000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 5000ms exceeded.
+    at ProgressController.run (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/progress.js:78:26)
+    at Frame.waitForSelector (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/frames.js:619:23)
+    at FrameDispatcher.waitForSelector (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/dispatchers/frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/dispatchers/dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("role=dialog").locator("text=Add Terminal") to be visible
+
+at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1050)
+at com.microsoft.playwright.impl.PageImpl.lambda$waitForSelector$93(PageImpl.java:1548)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+at com.microsoft.playwright.impl.PageImpl.waitForSelector(PageImpl.java:1547)
+at com.tonic.steps.AddTerminalSteps.add_terminal_dialog_should_be_visible(AddTerminalSteps.java:51)
+at com.tonic.steps.AddTerminalSteps.the_add_terminal_dialog_should_be_visible_cucumber(AddTerminalSteps.java:64)
+at ✽.the add terminal dialog should be visible(file:///Users/apple/Documents/Playwright/Playwright_Java_Automation/src/test/resources/features/add_terminal.feature:10)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 5000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 5000ms exceeded.
+    at ProgressController.run (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/progress.js:78:26)
+    at Frame.waitForSelector (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/frames.js:619:23)
+    at FrameDispatcher.waitForSelector (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/dispatchers/frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/dispatchers/dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("role=dialog").locator("text=Add Terminal") to be visible
+
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1050)
+at com.microsoft.playwright.impl.PageImpl.lambda$waitForSelector$93(PageImpl.java:1548)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+at com.microsoft.playwright.impl.PageImpl.waitForSelector(PageImpl.java:1547)
+at com.tonic.steps.AddTerminalSteps.add_terminal_dialog_should_be_visible(AddTerminalSteps.java:51)
+at com.tonic.steps.AddTerminalSteps.the_add_terminal_dialog_should_be_visible_cucumber(AddTerminalSteps.java:64)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)
+at io.cucumber.core.runner.TestStep.run(TestStep.java:64)
+at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+at io.cucumber.core.runner.TestCase.run(TestCase.java:104)
+at io.cucumber.core.runner.Runner.runPickle(Runner.java:73)
+at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:134)
+at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:117)
+at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:131)
+at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:31)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.TimeoutError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.tonic.runners.AllFeaturesTestRunner@58a63629]" started-at="2025-05-28T04:25:29 GMT-04:00" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-05-28T04:25:34 GMT-04:00" duration-ms="5466" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Perform GET API demo"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[API GET Demo]"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setupReport()[pri:0, instance:com.tonic.tests.web.LoginTest@573284a5]" started-at="2025-05-23T23:14:35 AEST" name="setupReport" finished-at="2025-05-23T23:14:36 AEST" duration-ms="139" status="PASS">
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.tonic.runners.AllFeaturesTestRunner@58a63629]" started-at="2025-05-28T04:25:34 GMT-04:00" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-05-28T04:25:35 GMT-04:00" duration-ms="345" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Create user with POST API"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[API POST Create User]"]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setupReport -->
-        <test-method is-config="true" signature="setupMethod()[pri:0, instance:com.tonic.tests.web.LoginTest@573284a5]" started-at="2025-05-23T23:14:36 AEST" name="setupMethod" finished-at="2025-05-23T23:14:36 AEST" duration-ms="0" status="PASS">
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.tonic.runners.AllFeaturesTestRunner@58a63629]" started-at="2025-05-28T04:25:35 GMT-04:00" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-05-28T04:25:43 GMT-04:00" duration-ms="8265" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Login with valid credentials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Login]"]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setupMethod -->
-        <test-method signature="loginWithValidCredentials()[pri:1, instance:com.tonic.tests.web.LoginTest@573284a5]" started-at="2025-05-23T23:14:36 AEST" name="loginWithValidCredentials" finished-at="2025-05-23T23:14:40 AEST" duration-ms="4404" status="PASS">
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.tonic.runners.AllFeaturesTestRunner@58a63629]" started-at="2025-05-28T04:25:43 GMT-04:00" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-05-28T04:25:48 GMT-04:00" duration-ms="5372" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Mobile app demo"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Mobile Account]"]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginWithValidCredentials -->
-        <test-method is-config="true" signature="tearDownMethod()[pri:0, instance:com.tonic.tests.web.LoginTest@573284a5]" started-at="2025-05-23T23:14:40 AEST" name="tearDownMethod" finished-at="2025-05-23T23:14:40 AEST" duration-ms="0" status="PASS">
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.tonic.runners.AllFeaturesTestRunner@58a63629]" started-at="2025-05-28T04:25:48 GMT-04:00" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-05-28T04:26:01 GMT-04:00" duration-ms="12818" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Navigate to terminals page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Terminal Navigation]"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="com.microsoft.playwright.TimeoutError">
+            <message>
+              <![CDATA[Error {
+  message='Timeout 5000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 5000ms exceeded.
+    at ProgressController.run (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/progress.js:78:26)
+    at Frame.waitForSelector (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/frames.js:619:23)
+    at FrameDispatcher.waitForSelector (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/dispatchers/frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/dispatchers/dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("input[placeholder='Terminal Name']") to be visible
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 5000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 5000ms exceeded.
+    at ProgressController.run (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/progress.js:78:26)
+    at Frame.waitForSelector (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/frames.js:619:23)
+    at FrameDispatcher.waitForSelector (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/dispatchers/frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/dispatchers/dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("input[placeholder='Terminal Name']") to be visible
+
+at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1050)
+at com.microsoft.playwright.impl.PageImpl.lambda$waitForSelector$93(PageImpl.java:1548)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+at com.microsoft.playwright.impl.PageImpl.waitForSelector(PageImpl.java:1547)
+at com.tonic.steps.CommonSteps.the_terminals_page_should_be_displayed(CommonSteps.java:42)
+at ✽.the terminals page should be displayed(file:///Users/apple/Documents/Playwright/Playwright_Java_Automation/src/test/resources/features/terminal_navigation.feature:9)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 5000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 5000ms exceeded.
+    at ProgressController.run (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/progress.js:78:26)
+    at Frame.waitForSelector (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/frames.js:619:23)
+    at FrameDispatcher.waitForSelector (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/dispatchers/frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/private/var/folders/h3/z53scmvs5ynbql11r8xszqtr0000gn/T/playwright-java-12493880621440577256/package/lib/server/dispatchers/dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("input[placeholder='Terminal Name']") to be visible
+
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1050)
+at com.microsoft.playwright.impl.PageImpl.lambda$waitForSelector$93(PageImpl.java:1548)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+at com.microsoft.playwright.impl.PageImpl.waitForSelector(PageImpl.java:1547)
+at com.tonic.steps.CommonSteps.the_terminals_page_should_be_displayed(CommonSteps.java:42)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)
+at io.cucumber.core.runner.TestStep.run(TestStep.java:64)
+at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+at io.cucumber.core.runner.TestCase.run(TestCase.java:104)
+at io.cucumber.core.runner.Runner.runPickle(Runner.java:73)
+at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:134)
+at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:117)
+at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:131)
+at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:31)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.TimeoutError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDownMethod -->
-        <test-method is-config="true" signature="tearDownReport()[pri:0, instance:com.tonic.tests.web.LoginTest@573284a5]" started-at="2025-05-23T23:14:40 AEST" name="tearDownReport" finished-at="2025-05-23T23:14:40 AEST" duration-ms="162" status="PASS">
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.tonic.runners.AllFeaturesTestRunner@58a63629]" started-at="2025-05-28T04:26:01 GMT-04:00" name="tearDownClass" finished-at="2025-05-28T04:26:01 GMT-04:00" duration-ms="70" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDownReport -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.tonic.tests.web.LoginTest@573284a5]" started-at="2025-05-23T23:14:40 AEST" name="tearDown" finished-at="2025-05-23T23:14:40 AEST" duration-ms="62" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.tonic.tests.web.LoginTest -->
-    </test> <!-- Surefire test -->
-  </suite> <!-- Surefire suite -->
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.tonic.runners.AllFeaturesTestRunner -->
+    </test> <!-- All Features BDD Test -->
+  </suite> <!-- Serenity BDD Composite Suite -->
 </testng-results>
