@@ -20,6 +20,7 @@
 target/allure-results/
 .allure/
 
+
 # Screenshots and reports
 /screenshots/
 /extent-test-output/
