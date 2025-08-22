@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-08-22T04:55:52 EDT" name="Surefire suite" finished-at="2025-08-22T04:57:39 EDT" duration-ms="107343">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.tonic.runners.TestRunner@6a0ac48e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2025-08-22T04:55:52 EDT" name="Surefire test" finished-at="2025-08-22T04:57:39 EDT" duration-ms="107343">
+      <class name="com.tonic.runners.TestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.tonic.runners.TestRunner@6a0ac48e]" started-at="2025-08-22T04:55:52 EDT" name="setUpClass" finished-at="2025-08-22T04:56:01 EDT" duration-ms="9131" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@5f81507a]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.tonic.runners.TestRunner@6a0ac48e]" started-at="2025-08-22T04:56:01 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-22T04:57:39 EDT" duration-ms="97944" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Add new category in BOH and validate the added category in FOH"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Menu Category Management"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Store Login Required!]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Store Login Required!
+at org.testng.Assert.fail(Assert.java:111)
+at com.tonic.pageObjects.mobile.Login.performResourceLogin(Login.java:46)
+at com.tonic.stepDefinitions.web.menu.MenuConfigurationSteps.theMobileAppIsLaunchedWithCredentials(MenuConfigurationSteps.java:126)
+at ✽.The user is logged into the Tonic FOH with resource id "7","4" and "1"(file:///Users/vrize/Documents/vrize2/BOH_Automation/tonic-ai-automation/src/test/resources/features/web/menu/MenuConfiguration.feature:38)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.tonic.runners.TestRunner@6a0ac48e]" started-at="2025-08-22T04:57:39 EDT" name="tearDownClass" finished-at="2025-08-22T04:57:39 EDT" duration-ms="169" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.tonic.runners.TestRunner -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

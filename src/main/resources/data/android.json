@@ -1,0 +1,13 @@
+{
+  "AndroidTest": {
+    "verifyUserIsAbleToAddProductToCart": {
+      "email": "abc@yopmail.com",
+      "password": "XSDD@12345",
+      "storeAddress": "ABC",
+      "storeName": "Sample",
+      "orderType": "XYZ",
+      "pickUpTime": "ASAP"
+    }
+
+  }
+}

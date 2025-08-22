@@ -1,0 +1,15 @@
+{
+  "Add new category in BOH and validate the added category in FOH" : {
+    "testKey" : null,
+    "testName" : "Add new category in BOH and validate the added category in FOH",
+    "finalStatus" : "FAILED",
+    "totalAttempts" : 1,
+    "failedAttempts" : 1,
+    "firstFailureMessage" : "Store Login Required!",
+    "lastFailureMessage" : "Store Login Required!",
+    "screenshotPath" : null,
+    "duration" : 97829,
+    "tags" : [ "@menu", "@MenuConfiguration", "@regression", "@SampleE2E" ],
+    "timestamp" : 1755853059617
+  }
+}

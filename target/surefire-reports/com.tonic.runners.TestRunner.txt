@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: com.tonic.runners.TestRunner
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 107.9 s <<< FAILURE! -- in com.tonic.runners.TestRunner
+com.tonic.runners.TestRunner.runScenario["Add new category in BOH and validate the added category in FOH", "Menu Category Management"](1) -- Time elapsed: 97.94 s <<< FAILURE!
+java.lang.AssertionError: Store Login Required!
+	at org.testng.Assert.fail(Assert.java:111)
+	at com.tonic.pageObjects.mobile.Login.performResourceLogin(Login.java:46)
+	at com.tonic.stepDefinitions.web.menu.MenuConfigurationSteps.theMobileAppIsLaunchedWithCredentials(MenuConfigurationSteps.java:126)
+	at ✽.The user is logged into the Tonic FOH with resource id "7","4" and "1"(file:///Users/vrize/Documents/vrize2/BOH_Automation/tonic-ai-automation/src/test/resources/features/web/menu/MenuConfiguration.feature:38)
+
