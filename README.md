@@ -1,4 +1,4 @@
-# Tonic AI Based Playwright Cucumber Automation Framework
+# Vrize AI Based Playwright Cucumber Automation Framework
 
 This project is a Test Automation Framework built with **Playwright Java**, **Serenity**, and **TestNG**, following the Page Object Model (POM) design pattern. It supports Web, Mobile, and API testing, and is designed for extensibility and maintainability.
 
@@ -48,7 +48,7 @@ This project is a Test Automation Framework built with **Playwright Java**, **Se
 ```bash
 mvn clean test -Dcucumber.filter.tags="@regression" -Ddataproviderthreadcount=2
 mvn clean test -Dtest=com.vrize.runners.TestRunner
-mvn clean test -Dcucumber.filter.tags="@TONIC7343
+mvn clean test -Dcucumber.filter.tags="@Vrize7343
 ```
 
 ### Run a specific TestNG test class
