@@ -3,13 +3,13 @@
 
 <suite name="Parallel Cucumber Suite" >
 	<listeners>
-		<listener class-name="com.tonic.listeners.CustomChainTestReporter"/>
-		<listener class-name="com.tonic.listeners.XrayListener"/>
+		<listener class-name="com.vrize.listeners.CustomChainTestReporter"/>
+		<listener class-name="com.vrize.listeners.XrayListener"/>
 		<!-- RetryListener removed - using RetryUtility instead -->
 	</listeners>
 	<test name="All Tests" parallel="tests">
 		<classes>
-			<class name="com.tonic.runners.TestRunner"/>
+			<class name="com.vrize.runners.TestRunner"/>
 		</classes>
 	</test>
 </suite>

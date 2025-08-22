@@ -65,7 +65,7 @@ check_enhanced_retry_config() {
     echo "🔍 Checking Enhanced Retry Configuration..."
     
     # Check if CucumberRetryListener is properly configured
-    if grep -q "CucumberRetryListener" "src/test/java/com/tonic/runners/TestRunner.java"; then
+    if grep -q "CucumberRetryListener" "src/test/java/com/vrize/runners/TestRunner.java"; then
         echo "✅ CucumberRetryListener is configured in TestRunner"
     else
         echo "❌ Warning: CucumberRetryListener not found in TestRunner"
@@ -73,7 +73,7 @@ check_enhanced_retry_config() {
     fi
     
     # Check if RetryUtility exists
-    if [ -f "src/main/java/com/tonic/listeners/RetryUtility.java" ]; then
+    if [ -f "src/main/java/com/vrize/listeners/RetryUtility.java" ]; then
         echo "✅ RetryUtility class found"
     else
         echo "❌ Warning: RetryUtility class not found"

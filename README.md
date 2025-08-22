@@ -47,14 +47,14 @@ This project is a Test Automation Framework built with **Playwright Java**, **Se
 
 ```bash
 mvn clean test -Dcucumber.filter.tags="@regression" -Ddataproviderthreadcount=2
-mvn clean test -Dtest=com.tonic.runners.TestRunner
+mvn clean test -Dtest=com.vrize.runners.TestRunner
 mvn clean test -Dcucumber.filter.tags="@TONIC7343
 ```
 
 ### Run a specific TestNG test class
 
 ```bash
-mvn clean test -Dtest=com.tonic.healthCheckTestngTests.web.LoginTest
+mvn clean test -Dtest=com.vrize.healthCheckTestngTests.web.LoginTest
 ```
 
 ### Run with a specific TestNG XML suite
@@ -68,7 +68,7 @@ mvn clean test -DsuiteXmlFile=src/test/resources/testrunners/testng.xml
 ## Running with a Visible Browser
 
 By default, Playwright runs in headless mode.  
-To see the browser UI, set `setHeadless(false)` in `src/test/java/com/tonic/hooks/Hooks.java`:
+To see the browser UI, set `setHeadless(false)` in `src/test/java/com/vrize/hooks/Hooks.java`:
 
 ```java
 browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
@@ -98,7 +98,7 @@ src
 ├── main
 │   └── java
 │       └── com
-│           └── tonic
+│           └── vrize
 │               ├── annotations/      # Custom annotations
 │               ├── constants/        # Framework and app constants
 │               ├── driver/           # WebDriver and Playwright driver management
@@ -111,7 +111,7 @@ src
 ├── test
 │   ├── java
 │   │   └── com
-│   │       └── tonic
+│   │       └── vrize
 │   │           ├── actions/                # Custom action classes
 │   │           ├── hooks/                  # Cucumber hooks (Playwright setup/teardown)
 │   │           ├── pageObjects/            # Page Object Model classes

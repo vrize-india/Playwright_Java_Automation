@@ -5,6 +5,6 @@ Feature: Mobile Account
   So that I can verify basic mobile functionality
 
   Scenario: Mobile app demo
-    Given the mobile app is launched with host "https://legacy-rc.nonprod.tonicpos.com/rest" store id "1212" and auth code "1818"
+    Given the mobile app is launched with host "https://legacy-rc.nonprod.vrizepos.com/rest" store id "1212" and auth code "1818"
     When the user performs a demo action
     Then the expected result should be displayed 
